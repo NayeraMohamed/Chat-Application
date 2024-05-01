@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :applications, param: :token do
+    resources :chats, only: [:index, :create], param: :number do
+      resources :messages, only: [:index, :create, :update], param: :number
+    end
+  end
   root 'home#index'
   #get 'home/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
