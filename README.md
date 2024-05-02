@@ -301,11 +301,11 @@ Application name should be unique
 ## Challenges and Future Enhancements
 
 #### MySQL
-- MySQL was challenging to setup, encountered `mysql client is missing` error, when attempted to include `libmysqlclient-dev` in the docker file, got `not a package error` >> that was solved by including `default-libmariadb-dev` instead
+- MySQL was challenging to setup, encountered `mysql client is missing` error while pulling the Docker image, then when attempting to include `libmysqlclient-dev` in the docker file to solve the error, got `not a package error` >> that was solved by including `default-libmysqlclient-dev` instead
 - After MySQL container run successfully, a connection couldn't be established to it, found it to be a common problem >> Still working on the fix that's why SQLite was used for the PoC instead
 
 #### Creating Messages in Batches
-- The job can be found under `app/jobs` but calling it from the controller was challenging as the message object wasn't ready before the object was created in the DB (id was missing) >> still looking into the best way to do it
+- The job can be found under `app/jobs` but calling it from the controller was challenging as the message object wasn't ready to be sent to the job before the object was created in the DB (as the id was missing) >> still looking into the best way to handle it
 
 #### Indexing the Messages in ElasticSearch
 - Messages were indexed fine while running the server manually (without Docker) but it seems to not run in Docker, even though `bin/rails searchkick:reindex CLASS=Message` is included in the Docker Compose file >> still looking into it
