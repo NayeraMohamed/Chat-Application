@@ -47,6 +47,8 @@ class MessagesController < ApplicationController
     else
       render json: message.errors, status: :unprocessable_entity
     end
+  rescue ActiveRecord::StaleObjectError
+    render json: { error: "Another process updated this record. Please retry." }, status: :conflict
   end
 
   # PATCH /applications/:token/chats/:number/messages/:number
@@ -58,6 +60,9 @@ class MessagesController < ApplicationController
     else
       render json: message.errors, status: :unprocessable_entity
     end
+  rescue ActiveRecord::StaleObjectError
+    render json: { error: "Another process updated this record. Please retry." }, status: :conflict
+
   end
 
   private

@@ -27,6 +27,9 @@ class ChatsController < ApplicationController
     else
       render json: chat.errors, status: :unprocessable_entity
     end
+  rescue ActiveRecord::StaleObjectError
+    render json: { error: "Another process updated this record. Please retry." }, status: :conflict
+
   end
 
   private

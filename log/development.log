@@ -2274,3 +2274,265 @@ Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:42:13 +0300
 Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:43:13 +0300
 Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:44:13 +0300
 Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:45:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:46:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:47:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:48:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:49:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:50:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:51:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:52:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:53:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:54:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:55:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:56:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:57:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:58:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 10:59:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:00:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:01:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:02:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:03:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:04:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:05:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:06:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:07:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:08:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:09:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:10:14 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:11:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:12:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:13:14 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:14:14 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:15:14 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:16:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:17:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:18:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:19:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:20:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:21:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:22:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:23:13 +0300
+Started GET "/applications/11c8ccce1b8d3839e94226a954ee151a/chats/1/messages/search?body=hi" for ::1 at 2024-05-02 11:23:45 +0300
+Processing by MessagesController#search as */*
+  Parameters: {"body"=>"hi", "application_token"=>"[FILTERED]", "chat_number"=>"1"}
+  [1m[36mApplication Load (11.5ms)[0m  [1m[34mSELECT "applications".* FROM "applications" WHERE "applications"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:65:in `set_application'
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."application_id" = ? AND "chats"."number" = ? LIMIT ?[0m  [["application_id", 1], ["number", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:74:in `set_chat'
+  [1m[33mMessage Search (981.9ms)[0m  messages_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"match":{"body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"body.analyzed":{"query":"hi","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"body.analyzed":{"query":"hi","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}}]}},"timeout":"11000ms","_source":false,"size":10000}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/messages_controller.rb:30:in `search'
+Completed 200 OK in 1221ms (Views: 0.4ms | Searchkick: 981.9ms | ActiveRecord: 101.5ms | Allocations: 15657)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:24:14 +0300
+Started GET "/applications/11c8ccce1b8d3839e94226a954ee151a/chats/1/messages/search?body=hi" for ::1 at 2024-05-02 11:25:04 +0300
+Processing by MessagesController#search as */*
+  Parameters: {"body"=>"hi", "application_token"=>"[FILTERED]", "chat_number"=>"1"}
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT "applications".* FROM "applications" WHERE "applications"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:65:in `set_application'
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."application_id" = ? AND "chats"."number" = ? LIMIT ?[0m  [["application_id", 1], ["number", 1], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:74:in `set_chat'
+  [1m[33mMessage Search (17.1ms)[0m  messages_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"match":{"body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"body.analyzed":{"query":"hi","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"body.analyzed":{"query":"hi","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"body.analyzed":{"query":"hi","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}}]}},"timeout":"11000ms","_source":false,"size":10000}
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/messages_controller.rb:30:in `search'
+Completed 200 OK in 24ms (Views: 0.1ms | Searchkick: 17.1ms | ActiveRecord: 0.3ms | Allocations: 2534)
+
+
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:25:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:26:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:27:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:28:13 +0300
+Started GET "/applications/11c8ccce1b8d3839e94226a954ee151a/chats" for ::1 at 2024-05-02 11:28:34 +0300
+Processing by ChatsController#index as */*
+  Parameters: {"application_token"=>"[FILTERED]"}
+  [1m[36mApplication Load (84.8ms)[0m  [1m[34mSELECT "applications".* FROM "applications" WHERE "applications"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/chats_controller.rb:34:in `set_application'
+  [1m[36mChat Load (1.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."application_id" = ?[0m  [["application_id", 1]]
+  ↳ app/controllers/chats_controller.rb:8:in `index'
+Completed 200 OK in 164ms (Views: 6.1ms | ActiveRecord: 85.9ms | Allocations: 2182)
+
+
+Started POST "/applications/11c8ccce1b8d3839e94226a954ee151a/chats/2/messages" for ::1 at 2024-05-02 11:28:58 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"hey there!", "application_token"=>"[FILTERED]", "chat_number"=>"2", "message"=>{"body"=>"hey there!"}}
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT "applications".* FROM "applications" WHERE "applications"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:65:in `set_application'
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."application_id" = ? AND "chats"."number" = ? LIMIT ?[0m  [["application_id", 1], ["number", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:74:in `set_chat'
+  [1m[36mMessage Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."number" = ? AND "messages"."chat_id" = ? LIMIT ?[0m  [["number", 1], ["chat_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms | Allocations: 3317)
+
+
+  
+NameError (uninitialized constant MessagesController::BatchMessageCreationJob):
+  
+app/controllers/messages_controller.rb:45:in `create'
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:29:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:30:14 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:31:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:32:13 +0300
+Started POST "/applications/11c8ccce1b8d3839e94226a954ee151a/chats/2/messages" for ::1 at 2024-05-02 11:32:43 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"hey there!", "application_token"=>"[FILTERED]", "chat_number"=>"2", "message"=>{"body"=>"hey there!"}}
+  [1m[36mApplication Load (100.2ms)[0m  [1m[34mSELECT "applications".* FROM "applications" WHERE "applications"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:65:in `set_application'
+  [1m[36mChat Load (0.3ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."application_id" = ? AND "chats"."number" = ? LIMIT ?[0m  [["application_id", 1], ["number", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:74:in `set_chat'
+  [1m[36mMessage Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."number" = ? AND "messages"."chat_id" = ? LIMIT ?[0m  [["number", 1], ["chat_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+Completed 500 Internal Server Error in 430ms (ActiveRecord: 320.1ms | Allocations: 14445)
+
+
+  
+NameError (uninitialized constant MessagesController::BatchMessageCreationJob):
+  
+app/controllers/messages_controller.rb:45:in `create'
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:33:15 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:34:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:35:13 +0300
+Started POST "/applications/11c8ccce1b8d3839e94226a954ee151a/chats/2/messages" for ::1 at 2024-05-02 11:35:13 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"hey there!", "application_token"=>"[FILTERED]", "chat_number"=>"2", "message"=>{"body"=>"hey there!"}}
+  [1m[36mApplication Load (25.8ms)[0m  [1m[34mSELECT "applications".* FROM "applications" WHERE "applications"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:65:in `set_application'
+  [1m[36mChat Load (0.2ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."application_id" = ? AND "chats"."number" = ? LIMIT ?[0m  [["application_id", 1], ["number", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:74:in `set_chat'
+  [1m[36mMessage Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."number" = ? AND "messages"."chat_id" = ? LIMIT ?[0m  [["number", 1], ["chat_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+[ActiveJob] Failed enqueuing BatchMessageCreationJob to Sidekiq(default): ActiveJob::SerializationError (Unable to serialize Message without an id. (Maybe you forgot to call save?))
+[ActiveJob] ↳ app/controllers/messages_controller.rb:45:in `create'
+Completed 500 Internal Server Error in 840ms (ActiveRecord: 302.5ms | Allocations: 15865)
+
+
+  
+ActiveJob::SerializationError (Unable to serialize Message without an id. (Maybe you forgot to call save?)):
+  
+app/controllers/messages_controller.rb:45:in `create'
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:36:15 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:37:14 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:38:14 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:39:14 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:40:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:41:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:42:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:43:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:44:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:45:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:46:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:47:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:48:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:49:13 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:50:49 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:57:34 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:57:39 +0300
+Started GET "/sidekiq/stats" for 127.0.0.1 at 2024-05-02 11:57:42 +0300
+Started POST "/applications/11c8ccce1b8d3839e94226a954ee151a/chats/2/messages" for ::1 at 2024-05-02 12:06:59 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"hey there!", "application_token"=>"[FILTERED]", "chat_number"=>"2", "message"=>{"body"=>"hey there!"}}
+  [1m[36mApplication Load (504.8ms)[0m  [1m[34mSELECT "applications".* FROM "applications" WHERE "applications"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:70:in `set_application'
+  [1m[36mChat Load (0.5ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."application_id" = ? AND "chats"."number" = ? LIMIT ?[0m  [["application_id", 1], ["number", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:79:in `set_chat'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mMessage Exists? (6.1ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."number" = ? AND "messages"."chat_id" = ? LIMIT ?[0m  [["number", 1], ["chat_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mMessage Create (0.7ms)[0m  [1m[32mINSERT INTO "messages" ("number", "body", "chat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["number", 1], ["body", "hey there!"], ["chat_id", 2], ["created_at", "2024-05-02 09:07:04.896182"], ["updated_at", "2024-05-02 09:07:04.896182"]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mChat Update All (0.4ms)[0m  [1m[33mUPDATE "chats" SET "messages_count" = COALESCE("messages_count", 0) + ? WHERE "chats"."id" = ?[0m  [["messages_count", 1], ["id", 2]]
+  ↳ app/models/message.rb:13:in `increment_chat_messages_count'
+  [1m[36mTRANSACTION (96.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[33mMessage Store (1067.4ms)[0m  {"id":7}
+[ActiveJob] Enqueued IndexMessageJob (Job ID: 6a2b80e3-db8e-45d2-b291-5bfdf082b304) to Sidekiq(default) with arguments: #<GlobalID:0x00007f3de4acb858 @uri=#<URI::GID gid://chat-app/Message/7>>
+[ActiveJob] ↳ app/controllers/messages_controller.rb:45:in `create'
+Completed 201 Created in 2098ms (Views: 0.8ms | Searchkick: 1067.4ms | ActiveRecord: 652.8ms | Allocations: 17515)
+
+
+[ActiveJob] [IndexMessageJob] [6a2b80e3-db8e-45d2-b291-5bfdf082b304]   [1m[36mMessage Load (0.9ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob] [IndexMessageJob] [6a2b80e3-db8e-45d2-b291-5bfdf082b304] Performing IndexMessageJob (Job ID: 6a2b80e3-db8e-45d2-b291-5bfdf082b304) from Sidekiq(default) enqueued at 2024-05-02T09:07:06.164786956Z with arguments: #<GlobalID:0x00007f23d7f60cf0 @uri=#<URI::GID gid://chat-app/Message/7>>
+[ActiveJob] [IndexMessageJob] [6a2b80e3-db8e-45d2-b291-5bfdf082b304]   [1m[33mMessage Store (64.3ms)[0m  {"id":7}
+[ActiveJob] [IndexMessageJob] [6a2b80e3-db8e-45d2-b291-5bfdf082b304] Performed IndexMessageJob (Job ID: 6a2b80e3-db8e-45d2-b291-5bfdf082b304) from Sidekiq(default) in 73.73ms
+Started POST "/applications/11c8ccce1b8d3839e94226a954ee151a/chats/2/messages" for ::1 at 2024-05-02 12:07:12 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"hey there!", "application_token"=>"[FILTERED]", "chat_number"=>"2", "message"=>{"body"=>"hey there!"}}
+  [1m[36mApplication Load (0.3ms)[0m  [1m[34mSELECT "applications".* FROM "applications" WHERE "applications"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:70:in `set_application'
+  [1m[36mChat Load (0.3ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."application_id" = ? AND "chats"."number" = ? LIMIT ?[0m  [["application_id", 1], ["number", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:79:in `set_chat'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mMessage Exists? (2.7ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."number" = ? AND "messages"."chat_id" = ? LIMIT ?[0m  [["number", 2], ["chat_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mMessage Create (0.3ms)[0m  [1m[32mINSERT INTO "messages" ("number", "body", "chat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["number", 2], ["body", "hey there!"], ["chat_id", 2], ["created_at", "2024-05-02 09:07:12.421806"], ["updated_at", "2024-05-02 09:07:12.421806"]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mChat Update All (0.2ms)[0m  [1m[33mUPDATE "chats" SET "messages_count" = COALESCE("messages_count", 0) + ? WHERE "chats"."id" = ?[0m  [["messages_count", 1], ["id", 2]]
+  ↳ app/models/message.rb:13:in `increment_chat_messages_count'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[33mMessage Store (82.1ms)[0m  {"id":8}
+[ActiveJob] Enqueued IndexMessageJob (Job ID: 3dec5f35-8b97-4d48-aa6a-600dc9ccde5e) to Sidekiq(default) with arguments: #<GlobalID:0x00007f3de4992810 @uri=#<URI::GID gid://chat-app/Message/8>>
+[ActiveJob] ↳ app/controllers/messages_controller.rb:45:in `create'
+Completed 201 Created in 119ms (Views: 0.6ms | Searchkick: 82.1ms | ActiveRecord: 3.8ms | Allocations: 5311)
+
+
+[ActiveJob] [IndexMessageJob] [3dec5f35-8b97-4d48-aa6a-600dc9ccde5e]   [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob] [IndexMessageJob] [3dec5f35-8b97-4d48-aa6a-600dc9ccde5e] Performing IndexMessageJob (Job ID: 3dec5f35-8b97-4d48-aa6a-600dc9ccde5e) from Sidekiq(default) enqueued at 2024-05-02T09:07:12.514649984Z with arguments: #<GlobalID:0x00007f23d7f38c28 @uri=#<URI::GID gid://chat-app/Message/8>>
+[ActiveJob] [IndexMessageJob] [3dec5f35-8b97-4d48-aa6a-600dc9ccde5e]   [1m[33mMessage Store (113.9ms)[0m  {"id":8}
+[ActiveJob] [IndexMessageJob] [3dec5f35-8b97-4d48-aa6a-600dc9ccde5e] Performed IndexMessageJob (Job ID: 3dec5f35-8b97-4d48-aa6a-600dc9ccde5e) from Sidekiq(default) in 144.23ms
+Started POST "/applications/11c8ccce1b8d3839e94226a954ee151a/chats/2/messages" for ::1 at 2024-05-02 12:07:14 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"hey there!", "application_token"=>"[FILTERED]", "chat_number"=>"2", "message"=>{"body"=>"hey there!"}}
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT "applications".* FROM "applications" WHERE "applications"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:70:in `set_application'
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."application_id" = ? AND "chats"."number" = ? LIMIT ?[0m  [["application_id", 1], ["number", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:79:in `set_chat'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mMessage Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."number" = ? AND "messages"."chat_id" = ? LIMIT ?[0m  [["number", 3], ["chat_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mMessage Create (0.1ms)[0m  [1m[32mINSERT INTO "messages" ("number", "body", "chat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["number", 3], ["body", "hey there!"], ["chat_id", 2], ["created_at", "2024-05-02 09:07:14.037270"], ["updated_at", "2024-05-02 09:07:14.037270"]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mChat Update All (0.1ms)[0m  [1m[33mUPDATE "chats" SET "messages_count" = COALESCE("messages_count", 0) + ? WHERE "chats"."id" = ?[0m  [["messages_count", 1], ["id", 2]]
+  ↳ app/models/message.rb:13:in `increment_chat_messages_count'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[33mMessage Store (120.4ms)[0m  {"id":9}
+[ActiveJob] Enqueued IndexMessageJob (Job ID: fded95cd-fe0e-40fa-84bd-029a7695f966) to Sidekiq(default) with arguments: #<GlobalID:0x00007f3de473d9e8 @uri=#<URI::GID gid://chat-app/Message/9>>
+[ActiveJob] ↳ app/controllers/messages_controller.rb:45:in `create'
+Completed 201 Created in 138ms (Views: 0.7ms | Searchkick: 120.4ms | ActiveRecord: 1.4ms | Allocations: 5306)
+
+
+[ActiveJob] [IndexMessageJob] [fded95cd-fe0e-40fa-84bd-029a7695f966]   [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob] [IndexMessageJob] [fded95cd-fe0e-40fa-84bd-029a7695f966] Performing IndexMessageJob (Job ID: fded95cd-fe0e-40fa-84bd-029a7695f966) from Sidekiq(default) enqueued at 2024-05-02T09:07:14.163517036Z with arguments: #<GlobalID:0x00007f23d7f17c08 @uri=#<URI::GID gid://chat-app/Message/9>>
+[ActiveJob] [IndexMessageJob] [fded95cd-fe0e-40fa-84bd-029a7695f966]   [1m[33mMessage Store (54.5ms)[0m  {"id":9}
+[ActiveJob] [IndexMessageJob] [fded95cd-fe0e-40fa-84bd-029a7695f966] Performed IndexMessageJob (Job ID: fded95cd-fe0e-40fa-84bd-029a7695f966) from Sidekiq(default) in 62.91ms
+Started POST "/applications/11c8ccce1b8d3839e94226a954ee151a/chats/2/messages" for ::1 at 2024-05-02 12:07:17 +0300
+Processing by MessagesController#create as */*
+  Parameters: {"body"=>"hey there!", "application_token"=>"[FILTERED]", "chat_number"=>"2", "message"=>{"body"=>"hey there!"}}
+  [1m[36mApplication Load (0.1ms)[0m  [1m[34mSELECT "applications".* FROM "applications" WHERE "applications"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:70:in `set_application'
+  [1m[36mChat Load (0.1ms)[0m  [1m[34mSELECT "chats".* FROM "chats" WHERE "chats"."application_id" = ? AND "chats"."number" = ? LIMIT ?[0m  [["application_id", 1], ["number", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:79:in `set_chat'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mMessage Exists? (1.5ms)[0m  [1m[34mSELECT 1 AS one FROM "messages" WHERE "messages"."number" = ? AND "messages"."chat_id" = ? LIMIT ?[0m  [["number", 4], ["chat_id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mMessage Create (0.2ms)[0m  [1m[32mINSERT INTO "messages" ("number", "body", "chat_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["number", 4], ["body", "hey there!"], ["chat_id", 2], ["created_at", "2024-05-02 09:07:17.057663"], ["updated_at", "2024-05-02 09:07:17.057663"]]
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[36mChat Update All (0.1ms)[0m  [1m[33mUPDATE "chats" SET "messages_count" = COALESCE("messages_count", 0) + ? WHERE "chats"."id" = ?[0m  [["messages_count", 1], ["id", 2]]
+  ↳ app/models/message.rb:13:in `increment_chat_messages_count'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/messages_controller.rb:44:in `create'
+  [1m[33mMessage Store (119.0ms)[0m  {"id":10}
+[ActiveJob] Enqueued IndexMessageJob (Job ID: 3e100878-3653-4041-9a47-c14e04b7d57c) to Sidekiq(default) with arguments: #<GlobalID:0x00007f3de40844f8 @uri=#<URI::GID gid://chat-app/Message/10>>
+[ActiveJob] ↳ app/controllers/messages_controller.rb:45:in `create'
+Completed 201 Created in 138ms (Views: 1.9ms | Searchkick: 119.0ms | ActiveRecord: 2.2ms | Allocations: 5303)
+
+
+[ActiveJob] [IndexMessageJob] [3e100878-3653-4041-9a47-c14e04b7d57c]   [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob] [IndexMessageJob] [3e100878-3653-4041-9a47-c14e04b7d57c] Performing IndexMessageJob (Job ID: 3e100878-3653-4041-9a47-c14e04b7d57c) from Sidekiq(default) enqueued at 2024-05-02T09:07:17.181810942Z with arguments: #<GlobalID:0x00007f23d7ef60a8 @uri=#<URI::GID gid://chat-app/Message/10>>
+[ActiveJob] [IndexMessageJob] [3e100878-3653-4041-9a47-c14e04b7d57c]   [1m[33mMessage Store (123.9ms)[0m  {"id":10}
+[ActiveJob] [IndexMessageJob] [3e100878-3653-4041-9a47-c14e04b7d57c] Performed IndexMessageJob (Job ID: 3e100878-3653-4041-9a47-c14e04b7d57c) from Sidekiq(default) in 131.97ms
