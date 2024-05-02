@@ -6,7 +6,8 @@ class MessagesController < ApplicationController
   # GET /applications/:token/chats/:number/messages
   def index
     messages = @chat.messages
-    render json: messages
+    message_attributes = messages.map { |message| { number: message.number, body: message.body } }
+    render json: message_attributes, status: :ok
   end
 
   # GET /applications/:token/chats/:number/messages/:number
@@ -14,7 +15,7 @@ class MessagesController < ApplicationController
     message = @chat.messages.find(params[:number])
 
     if message
-      render json: message, status: :ok
+      render json: { number: message.number, body: message.body }, status: :ok
     else
       render json: { error: 'Message not found' }, status: :not_found
     end
@@ -56,7 +57,7 @@ class MessagesController < ApplicationController
     message = @chat.messages.find(params[:number])
 
     if message.update(message_params)
-      render json: message, status: :ok
+      render json: { number: message.number, body: message.body }, status: :ok
     else
       render json: message.errors, status: :unprocessable_entity
     end

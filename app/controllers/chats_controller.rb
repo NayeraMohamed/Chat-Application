@@ -5,7 +5,8 @@ class ChatsController < ApplicationController
   # GET /applications/:token/chats
   def index
     chats = @application.chats
-    render json: chats
+    chat_attributes = chats.map { |chat| { number: chat.number, messages_count: chat.messages_count } }
+    render json: chat_attributes, status: :ok
   end
 
     # GET /applications/:token/chats/:number
@@ -13,7 +14,7 @@ class ChatsController < ApplicationController
       chat = @application.chats.find(params[:number])
 
       if chat
-        render json: chat, status: :ok
+        render json: { number: chat.number, messages_count: chat.messages_count }, status: :ok
       else
         render json: { error: 'Chat not found' }, status: :not_found
       end

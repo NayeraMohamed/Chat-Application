@@ -5,7 +5,8 @@ class ApplicationsController < ApplicationController
   # GET /applications
   def index
     applications = Application.all
-    render json: applications
+    application_attributes = applications.map { |application| { token: application.token, name: application.name, chats_count: application.chats_count }}
+    render json: application_attributes, status: :ok
   end
 
   # GET /applications/:token
@@ -13,7 +14,7 @@ class ApplicationsController < ApplicationController
     application = Application.find_by(token: params[:token])
 
     if application
-      render json: application, status: :ok
+      render json: { token: application.token, name: application.name, chats_count: application.chats_count }, status: :ok
     else
       render json: { error: 'Application not found' }, status: :not_found
     end
@@ -36,7 +37,7 @@ class ApplicationsController < ApplicationController
   def update
     application = Application.find_by(token: params[:token])
     if application.update(application_params)
-      render json: application, status: :ok
+      render json: { token: application.token, name: application.name, chats_count: application.chats_count }, status: :ok
     else
       render json: application.errors, status: :unprocessable_entity
     end
