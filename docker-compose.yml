@@ -3,13 +3,28 @@ version: '3'
 services:
   redis:
     image: redis:latest
+    container_name: redis
     ports:
       - "6379:6379"
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.15.1
+    container_name: elastic_search
     ports:
       - "9200:9200"
       - "9300:9300"
     environment:
       - discovery.type=single-node
+
+  chat_app:
+    container_name: chat_app
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+      - elasticsearch
+    command: bash -c "bin/rails db:migrate && bundle exec rails server -b 0.0.0.0 && bundle exec sidekiq && bin/rails searchkick:reindex CLASS=Message"
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - ELASTICSEARCH_URL=http://elasticsearch:9200

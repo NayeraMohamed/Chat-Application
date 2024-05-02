@@ -75,10 +75,10 @@ Rails.application.configure do
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.elasticsearch = {
-  url: 'http://localhost:9200'
-}
-config.redis = {
-  url: 'redis://localhost:6379/0'
-}
+    url: 'http://elasticsearch:9200'
+  }
+  config.redis = {
+    url: 'redis://redis:6379/0'
+  }
 
 end
