@@ -73,4 +73,12 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  config.elasticsearch = {
+  url: 'http://localhost:9200'
+}
+config.redis = {
+  url: 'redis://localhost:6379/0'
+}
+
 end

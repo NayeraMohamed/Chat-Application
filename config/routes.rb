@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
   resources :applications, param: :token do
-    resources :chats, only: [:index, :create], param: :number do
-      resources :messages, only: [:index, :create, :update], param: :number
+    resources :chats, param: :number do
+      resources :messages, param: :number do
+        collection do
+          get 'search', to: 'messages#search', as: 'search'
+        end
+      end
     end
   end
   root 'home#index'

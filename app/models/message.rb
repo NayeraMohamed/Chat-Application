@@ -1,4 +1,5 @@
 class Message < ApplicationRecord
+  searchkick
   belongs_to :chat
 
   before_validation :assign_number, on: :create
